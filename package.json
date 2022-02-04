@@ -2,15 +2,17 @@
   "name": "next-auth-password",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3014",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "12.0.10",
+    "next-auth": "^4.2.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "tailwindcss": "^3.0.18"
   },
   "devDependencies": {
     "@types/node": "17.0.14",
