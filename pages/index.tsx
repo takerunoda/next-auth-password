@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useSession, signIn, signOut } from "next-auth/react"
+import CreatedFor from '../Components/CreatedFor'
 
 const Home: NextPage = () => {
   //Next-Auth
@@ -20,17 +21,19 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
-            <div className="mt-5">
+            <div className="mt-5 text-center">
               {!session && (
                   <>
                   Not signed in <br />
                   <button className ="mt-3 bg-blue-500 hover:bg-blue-400 text-white w-20 p-2 rounded focus:outline-none cursor-pointer text-sm xs:text-base;" onClick={handleSignIn}>Sign in</button>
+                  <CreatedFor />
                   </>
               )}
               {session && (
                   <>
                   Signed in as {session.user && session.user.name} <br />
                   <button className ="mt-3 bg-green-500 hover:bg-green-400 text-white w-20 p-2 rounded focus:outline-none cursor-pointer text-sm xs:text-base;" onClick={handleSignOut}>Sign out</button>
+                  <CreatedFor />
                   </>
               )}
             </div>
