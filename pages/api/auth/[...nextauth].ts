@@ -3,9 +3,9 @@ import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const isCorrectCredentials = (credentials: any) =>
-  credentials.username === process.env.NEXTAUTH_USERNAME &&
-  credentials.password === process.env.NEXTAUTH_PASSWORD;
+const isCorrectCredentials = (credentials: Record<"username" | "password", string> | undefined) =>
+  credentials && credentials.username === process.env.NEXTAUTH_USERNAME &&
+  credentials && credentials.password === process.env.NEXTAUTH_PASSWORD;
 
 const options = {
   // Configure one or more authentication providers
